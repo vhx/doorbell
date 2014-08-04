@@ -1,0 +1,32 @@
+<html>
+<head>
+  <style>
+    div.parent { display: table; width: 100%; height: 100%; }
+    div.child { color: #fff;
+      display: table-cell;
+      text-align: center;
+      vertical-align:middle;
+     }
+    html,body {
+      background: #<%= %w{432a64 144f79 226657 d1d1d1 404040 721439}.shuffle.first %>;
+      text-transform: uppercase;
+      font-family: Helvetica;
+      font-size: 128px;
+      margin:0;
+      padding:0;
+    }
+  </style>
+  <meta http-equiv="refresh" content="5">
+</head>
+<body>
+  <div class="parent">
+    <div class="child">
+      <% if @messages.first.sid.match(/^SM/) %>
+        <%= @messages.first.body %>
+      <% else %>
+        Someone called
+      <% end %>
+    </div>
+  </div>
+</body>
+</style>
